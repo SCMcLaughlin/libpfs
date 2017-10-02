@@ -152,7 +152,7 @@ static int pfs_decompress_index(PFS* pfs, uint8_t** outData, uint32_t* outLength
     
     ent = &pfs->entries[index];
     ilen = ent->inflatedLen;
-    src = pfs->data + ent->offset;
+    src = (ent->inserted) ? ent->inserted : pfs->data + ent->offset;
     dst = (uint8_t*)malloc(ilen);
     
     if (!dst) return PFS_OUT_OF_MEMORY;
