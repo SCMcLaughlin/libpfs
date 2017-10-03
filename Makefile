@@ -49,6 +49,6 @@ clean:
 	$(E) "Cleaned build directory"
 
 install:
-	cp pfs.h /usr/include/
-	cp libpfs.so /usr/lib/
-	ldconfig -n /usr/lib
+	cp pfs.h /usr/local/include/
+	cp libpfs.so /usr/local/lib/
+	ldconfig -n /usr/local/lib
